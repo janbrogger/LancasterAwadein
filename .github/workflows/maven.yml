@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -17,6 +18,6 @@ jobs:
       run: mvn -B package --file LancasterAwadein/pom.xml
     - name: Upload built JAR
       uses: actions/upload-artifact@v1
-        with:
+      with:
           name: LancasterAwadein
           path: LancasterAwadein/target/LancasterAwadein-1.0.jar
