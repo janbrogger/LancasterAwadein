@@ -1,3 +1,5 @@
+package no.brogger.lancasterawadein;
+
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;

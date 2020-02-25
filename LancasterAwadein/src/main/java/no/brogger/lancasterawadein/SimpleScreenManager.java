@@ -1,3 +1,5 @@
+package no.brogger.lancasterawadein;
+
 import java.awt.*;
 import javax.swing.JFrame;
 import java.awt.image.BufferStrategy;

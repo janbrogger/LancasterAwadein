@@ -1,3 +1,5 @@
+package no.brogger.lancasterawadein;
+
 import java.awt.*;
 import javax.swing.JFrame;
 import java.awt.Graphics2D;
@@ -6,6 +8,10 @@ import java.awt.geom.AffineTransform;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
+
+import no.brogger.lancasterawadein.DrawNumeric;
+import no.brogger.lancasterawadein.GreenLine;
+
 import java.awt.Color;
 import java.io.IOException;
 import java.io.File;
@@ -77,7 +83,8 @@ public class LRG extends Canvas implements KeyListener{
 	
 	        screen = new SimpleScreenManager();
     
-    	        screen.restoreScreen();
+    	        screen.restoreScreen();
+
 
 	       for (int r = 0; r <9; r++) {
 		System.out.println (greenpoints[r][0]);
@@ -94,11 +101,13 @@ public class LRG extends Canvas implements KeyListener{
 	}
 	}
    public void keyReleased(KeyEvent e) {
-	
+	
+
 	}
 
    public void keyTyped(KeyEvent e) {
-
+
+
 	}
 
 
@@ -158,7 +167,8 @@ public BufferedImage createBackBuffer (Rectangle z) {
 	// Draw red line
 	AffineTransform atr = new AffineTransform();
 	a = (z.width/4) *i ;
-	b = (z.height/4) * j ;
+	b = (z.height/4) * j ;
+
 	atr.translate(a-fudgeh,b- fudgev);
 	g2d.setTransform(atr); 
 	g2d.drawImage(redline, 0,0, null);

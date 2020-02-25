@@ -1,3 +1,5 @@
+package no.brogger.lancasterawadein;
+
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -98,7 +100,8 @@ protected void paintComponent(Graphics g) {
 		// Draw red line
 		AffineTransform atr = new AffineTransform();
 		int a = (z.width/4) *i ;
-		int b = (z.height/4)*j ;
+		int b = (z.height/4)*j ;
+
 		atr.translate(a-fudgeh,b- fudgev);
 		g2.setTransform(atr); 
 		g2.setColor(Color.RED);
@@ -108,7 +111,8 @@ protected void paintComponent(Graphics g) {
 
 	
 		// Draw green line
-		AffineTransform at = new AffineTransform();
+		AffineTransform at = new AffineTransform();
+
 		int c = (int) (greenlines[counts][0]*z.width);
 		int d = (int) (greenlines[counts][1]*z.height);
 		at.translate(c,d);

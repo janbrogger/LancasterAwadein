@@ -1,8 +1,10 @@
+package no.brogger.lancasterawadein;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
- import java.util.Vector;
+import java.util.Vector;
 
-public class UpdateDatabase3 {
+public class UpdateDatabase {
 
    public static boolean searching(String x)
        throws SQLException, ClassNotFoundException {
@@ -79,7 +81,8 @@ public static String [] searchoutcome(String x)
 	    outcome[1] = rss.getString(2);
 	    
 		}    
-
+
+
 	
      
    // Close the connection
@@ -215,16 +218,27 @@ public static void addVisitData (String ID, String Date, double [] [] greenpoint
      // Create a statement
     PreparedStatement visitinsert = null;
     
-    String visitdata = "insert into " + "VISITS " +
-             "values(?, ?, ?)";;
+    String visitdata = "insert into " + "VISIT " +
+             "values(?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?,? )";
     visitinsert = connection.prepareStatement(visitdata);
  	
      // Execute a statement
  		
-      visitinsert.setString(1, "ahmed");
-      visitinsert.setString(2, "ahmed");
-      visitinsert.setString(3, "ahmed");
+      visitinsert.setString(28,ID);
+      System.out.println ("number1");
 
+      for (int b =1, c=0;b <28; b+=3, c+=1) {
+      	visitinsert.setDouble(b,greenpoints [(c)][0] );	
+	}
+      System.out.println ("number2");
+      for (int d =2, e=0; d <28; d+=3, e +=1) {
+      	visitinsert.setDouble(d,greenpoints [(e)][1] );	
+	}
+      System.out.println ("number3");
+      for (int f =3, g=0; f <28; f+=3, g +=1) {
+      	visitinsert.setDouble(f,greenpoints [(g)][1] );	
+	}
+      System.out.println ("number4");
       visitinsert.executeUpdate();
      System.out.println ("number5");
    // Close the connection

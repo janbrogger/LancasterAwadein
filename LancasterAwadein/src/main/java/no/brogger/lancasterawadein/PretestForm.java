@@ -1,3 +1,5 @@
+package no.brogger.lancasterawadein;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -122,7 +124,8 @@ public class PretestForm extends JFrame {
 					outcomes = UpdateDatabase.searchoutcome(IDtexts);
 					FirstName.setText(outcomes[0]);
 					LastName.setText(outcomes[1]);
-					int numrows = UpdateDatabase.searchvisits (IDtexts);
+					int numrows =
+ UpdateDatabase.searchvisits (IDtexts);
 					if (numrows > 0) {
 						for (int j = 0; j <numrows; j++) {
 	 						System.out.println("4");
@@ -161,13 +164,13 @@ public class PretestForm extends JFrame {
 					JOptionPane.showMessageDialog(null, "This number is already registered");
 				}
 				else {
-				UpdateDatabase.updating(IDtext, FirstNametext, LastNametext);
-				JOptionPane.showMessageDialog(null, "Ok, Registered");
-				IDFill.setText("2011");
-				FirstName.setText("");
-				LastName.setText("");
-				IDFill.requestFocusInWindow();
-				IDFill.setCaretPosition(5);
+					UpdateDatabase.updating(IDtext, FirstNametext, LastNametext);
+					JOptionPane.showMessageDialog(null, "Ok, Registered");
+					IDFill.setText("2011");
+					FirstName.setText("");
+					LastName.setText("");
+					IDFill.requestFocusInWindow();
+					IDFill.setCaretPosition(5);
 				}		
 			}
 			catch (Exception ex)	{
@@ -196,7 +199,8 @@ public class PretestForm extends JFrame {
 
 	        screen = new SimpleScreenManager();
     
-    	        screen.setFullScreen(displayMode, test);
+    	        screen.setFullScreen(displayMode, test);
+
 
 	        System.out.println("ahmed");
 	
