@@ -15,3 +15,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file LancasterAwadein/pom.xml
+    - name: Upload built JAR
+      uses: actions/upload-artifact@v1
+        with:
+          name: LancasterAwadein-1.0.0.jar
+          path: LancasterAwadein/target/LancasterAwadein-1.0.0.jar
