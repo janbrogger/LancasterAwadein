@@ -18,5 +18,5 @@ jobs:
     - name: Upload built JAR
       uses: actions/upload-artifact@v1
         with:
-          name: LancasterAwadein-1.0.0.jar
-          path: LancasterAwadein/target/LancasterAwadein-1.0.0.jar
+          name: LancasterAwadein
+          path: LancasterAwadein/target/LancasterAwadein-1.0.jar
